@@ -1,7 +1,7 @@
 export const getSingleDonation = async (id) => {
   try {
     console.log("id:", id);
-    const res = await fetch(`http://localhost:8000/donation/${id}`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BE_URL}/donation/${id}`, {
       cache: "no-store",
     });
     if (!res.ok) {

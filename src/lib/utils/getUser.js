@@ -1,6 +1,6 @@
 export const getUser = async (email) => {
   try {
-    const res = await fetch(`http://localhost:8000/user/${email}`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BE_URL}/user/${email}`, {
       cache: "no-store",
     });
 

@@ -1,13 +1,13 @@
 "use client";
-import Image from "next/image";
 import axios from "axios";
+import Image from "next/image";
 
-import { useEffect, useState } from "react";
-import colthingImg from "@/assets/clothing.jpeg";
+import educationImg from "@/assets/Education.png";
 import foodImg from "@/assets/Food.png";
 import healthImg from "@/assets/Health.png";
-import educationImg from "@/assets/Education.png";
+import colthingImg from "@/assets/clothing.jpeg";
 import otherImg from "@/assets/other.jpg";
+import { useEffect, useState } from "react";
 function getImage(category) {
   switch (category) {
     case "Health" || "health":
@@ -88,7 +88,8 @@ const HomePage = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:8000/donations");
+        const response = await axios.get(`${process.env.NEXT_PUBLIC_BE_URL}/donations`);
+        console.log("response", response)
         setDonations(response.data);
       } catch (error) {
         console.error("Error fetching donations:", error);
