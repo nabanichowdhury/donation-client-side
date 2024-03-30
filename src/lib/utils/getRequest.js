@@ -1,6 +1,6 @@
 export const getRequest = async () => {
   try {
-    const res = await fetch("http://localhost:8000/notification", {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BE_URL}/notification`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

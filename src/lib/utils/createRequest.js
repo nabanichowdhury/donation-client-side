@@ -1,6 +1,6 @@
 export const createRequest = async (request) => {
   try {
-    const res = await fetch("http://localhost:8000/create-request", {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BE_URL}/create-request`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

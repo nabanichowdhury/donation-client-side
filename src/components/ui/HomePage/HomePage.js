@@ -89,7 +89,6 @@ const HomePage = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(`${process.env.NEXT_PUBLIC_BE_URL}/donations`);
-        console.log("response", response)
         setDonations(response.data);
       } catch (error) {
         console.error("Error fetching donations:", error);

@@ -1,6 +1,6 @@
 export const deleteRequest = async (id) => {
   try {
-    const res = await fetch(`http://localhost:8000/delete-request/${id}`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BE_URL}/delete-request/${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
