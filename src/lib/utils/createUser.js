@@ -1,6 +1,6 @@
 export const createUser = async (user) => {
   try {
-    const res = await fetch("http://localhost:8000/createUser", {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BE_URL}/createUser`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

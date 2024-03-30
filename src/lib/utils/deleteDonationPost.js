@@ -1,6 +1,6 @@
 export const deleteDonationPost = async (id, user) => {
   try {
-    const res = await fetch(`http://localhost:8000/delete-donation/${id}`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BE_URL}/delete-donation/${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",

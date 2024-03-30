@@ -1,12 +1,10 @@
-export const updateUser = async (id, user) => {
+export const getRequest = async () => {
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_BE_URL}/update-user/${id}`, {
-      method: "PUT",
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BE_URL}/notification`, {
+      method: "GET",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(user),
-      cache: "no-store",
     });
     if (!res.ok) {
       throw new Error(`HTTP error! Status: ${res.status}`);
@@ -14,7 +12,7 @@ export const updateUser = async (id, user) => {
     const data = await res.json();
     return data;
   } catch (error) {
-    console.error("Error updating user:", error);
+    console.error("Error getting request:", error);
     throw error;
   }
 };

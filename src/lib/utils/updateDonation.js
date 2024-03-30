@@ -1,5 +1,5 @@
 export const updateDonation = async (id, data) => {
-  const res = await fetch(`http://localhost:8000/update-donation/${id}`, {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BE_URL}/update-donation/${id}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",

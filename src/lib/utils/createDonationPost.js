@@ -1,5 +1,5 @@
 export const createDonationPost = async (data) => {
-  const res = await fetch("http://localhost:8000/create-donation", {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BE_URL}/create-donation`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
